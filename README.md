@@ -8,6 +8,10 @@
 Пакеты для компиляции pidgin:  
 `sudo yum install -y pidgin-devel glib2-devel gtk2-devel gstreamer-devel gnutls-devel cyrus-sasl-devel`
 
+`wget https://sourceforge.net/projects/pidgin/files/Pidgin/2.14.7/pidgin-2.14.7.tar.bz2`  
+`tar -xvf pidgin-2.14.7.tar.bz2`  
+`cd pidgin-2.14.7`  
+
 `./configure --enable-gnutls --disable-screensaver --disable-gtkspell --disable-gevolution --disable-vv --disable-idn --disable-meanwhile --disable-avahi --disable-dbus --disable-tcl`  
 
 `make -j5`  вместо 5 поставить количество потоков процессора  
