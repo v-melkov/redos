@@ -1,7 +1,7 @@
 #### Pidgin
   
     sudo yum remove -y pidgin
-    sudo yum groupinstall "Development tools"
+    sudo yum groupinstall -y "Development tools"
     sudo yum install -y pidgin-devel glib2-devel gtk2-devel gstreamer-devel gnutls-devel cyrus-sasl-devel libcurl-devel libpurple-devel
     cd ~
     wget https://sourceforge.net/projects/pidgin/files/Pidgin/2.14.7/pidgin-2.14.7.tar.bz2
