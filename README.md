@@ -1,11 +1,21 @@
 #### Pidgin
-https://www.pidgin.im/plugins/?publisher=all&query=&type=  
-Полезные модули для pidgin  
-Установка пакетов для разработки:  
-`yum groupinstall "Development tools"`  
-Пакеты для pidgin:  
-`sudo yum install -y pidgin-dev glib2-devel libcurl-devel webkitgtk-devel`
+Удаляем стандартный pidgin  
+`sudo yum remove -y pidgin`  
 
+Установка пакетов для разработки:  
+`sudo yum groupinstall "Development tools"`  
+
+Пакеты для компиляции pidgin:  
+`sudo yum install -y pidgin-devel glib2-devel gtk2-devel gstreamer-devel gnutls-devel cyrus-sasl-devel`
+
+`./configure --enable-gnutls --disable-screensaver --disable-gtkspell --disable-gevolution --disable-vv --disable-idn --disable-meanwhile --disable-avahi --disable-dbus --disable-tcl`  
+
+`make -j5`  вместо 5 поставить количество потоков процессора  
+
+`sudo make install`  
+  
+---
+Дальше можно не смотреть  
 ##### скриншотер (сделать скриншот и отправить)  
 
     wget --inet4-only https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pidgin-sendscreenshot/pidgin-sendscreenshot-0.8-3.tar.bz2
