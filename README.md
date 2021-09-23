@@ -9,9 +9,16 @@
 
 Убираем сообщение при входе в систему  
 
-    sed -i 's!/usr/bin/zenity --warning!#/usr/bin/zenity --warning!' /etc/gdm/PreSession/Default
+    sudo sed -i 's!/usr/bin/zenity --warning!#/usr/bin/zenity --warning!' /etc/gdm/PreSession/Default
+
+Отключаем selinux  
+
+    sudo sed -i 's/SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
 
 
+Вводим компьютер в домен (изменить под себя: -d имя_домена -n имя_компьютера -u админ_домена -p пароль_админа_домена). Проверить дату время перед подключением!
+
+    sudo /usr/bin/join-to-domain.sh -d uk.lbt -n computer_name -u Administrator -p password -y
 
 #### Pidgin
 
