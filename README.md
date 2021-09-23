@@ -1,5 +1,20 @@
+# RedOS - настройки после установки  
+*Версия redos 7.3*
+
+-----  
+
+Обновление системы  
+
+    sudo dnf update -y
+
+Убираем сообщение при входе в систему  
+
+    sed -i 's!/usr/bin/zenity --warning!#/usr/bin/zenity --warning!' /etc/gdm/PreSession/Default
+
+
+
 #### Pidgin
-  
+
     sudo yum remove -y pidgin
     sudo yum groupinstall -y "Development tools"
     sudo yum install -y pidgin-devel glib2-devel gtk2-devel gstreamer-devel gnutls-devel cyrus-sasl-devel libcurl-devel libpurple-devel
@@ -10,11 +25,11 @@
     ./configure --enable-gnutls=yes --disable-screensaver --disable-gtkspell --disable-gevolution --disable-vv --disable-idn --disable-meanwhile --disable-avahi --disable-dbus --disable-tcl
     make -j5
     sudo make install
-  
+
 ---
 Дальше можно не смотреть  
 ##### скриншотер (сделать скриншот и отправить)  
-https://code.google.com/archive/p/pidgin-sendscreenshot/) 
+https://code.google.com/archive/p/pidgin-sendscreenshot/)
 
     cd ~
     wget --inet4-only https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pidgin-sendscreenshot/pidgin-sendscreenshot-0.8-3.tar.bz2
