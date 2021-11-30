@@ -22,7 +22,7 @@
 
 #### Pidgin  
 
-```sudo ls -ln #закэшировать пароль sudo
+    sudo ls -ln #закэшировать пароль sudo
 
 
     sudo yum remove -y pidgin
