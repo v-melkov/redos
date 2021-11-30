@@ -23,6 +23,8 @@
 #### Pidgin  
 
     sudo ls -ln #закэшировать пароль sudo
+    
+Нажать кнопку копировать и вставить в терминал
 
 
     sudo yum remove -y pidgin
