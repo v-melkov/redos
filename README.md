@@ -26,9 +26,9 @@
     sudo yum groupinstall -y "Development tools"
     sudo yum install -y pidgin-devel glib2-devel gtk2-devel gstreamer-devel gnutls-devel cyrus-sasl-devel libcurl-devel libpurple-devel
     cd ~
-    wget https://sourceforge.net/projects/pidgin/files/Pidgin/2.14.7/pidgin-2.14.7.tar.bz2
-    tar -xvf pidgin-2.14.7.tar.bz2
-    cd pidgin-2.14.7
+    wget https://sourceforge.net/projects/pidgin/files/latest/download -O pidgin-source.tar.bz2
+    tar -xvf pidgin-source.tar.bz2
+    cd pidgin-source
     ./configure --enable-gnutls=yes --disable-screensaver --disable-gtkspell --disable-gevolution --disable-vv --disable-idn --disable-meanwhile --disable-avahi --disable-dbus --disable-tcl
     make -j5
     sudo make install
