@@ -40,7 +40,7 @@
     sudo make install
     cd ~
     rm -rf ~/pidgin-source
-    sudo yum remove -y pidgin-devel glib2-devel gtk2-devel gstreamer-devel gnutls-devel cyrus-sasl-devel libcurl-devel libpurple-devel
+    sudo yum remove -y pidgin-devel glib2-devel gtk2-devel gstreamer-devel gnutls-devel cyrus-sasl-devel libcurl-devel libpurple-devel libSM-devel
     
 
 ---
