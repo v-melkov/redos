@@ -22,15 +22,15 @@
 
 #### Pidgin  
 
-`sudo ls -ln #закэшировать пароль sudo
+```sudo ls -ln #закэшировать пароль sudo
 
 
     sudo yum remove -y pidgin
     sudo yum groupinstall -y "Development tools"
-    sudo yum install -y pidgin-devel glib2-devel gtk2-devel gstreamer-devel gnutls-devel cyrus-sasl-devel libcurl-devel libpurple-devel
+    sudo yum install -y pidgin-devel glib2-devel gtk2-devel gstreamer-devel gnutls-devel cyrus-sasl-devel libcurl-devel libpurple-devel libSM-devel
     cd ~
     wget https://sourceforge.net/projects/pidgin/files/Pidgin/2.14.8/pidgin-2.14.8.tar.bz2 -O pidgin-source.tar.bz2
-    sudo mkdir pidgin-source
+    mkdir pidgin-source
     tar -xvf pidgin-source.tar.bz2 -C pidgin-source --strip-components=1
     cd pidgin-source
     ./configure --enable-gnutls=yes --disable-screensaver --disable-gtkspell --disable-gevolution --disable-vv --disable-idn --disable-meanwhile --disable-avahi --disable-dbus --disable-tcl
