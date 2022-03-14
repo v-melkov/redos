@@ -127,3 +127,4 @@ VeraCrypt есть для всех ОС - рекомендую пользова�
     cd ~
     rm -rf ~/pidgin-source
     dnf remove -y pidgin-devel
+    
