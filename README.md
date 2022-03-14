@@ -17,7 +17,7 @@
 На сайте редоса есть подробная [статья](https://redos.red-soft.ru/base/update/update-to-7-3/) по обновлению с 7.2 на 7.3  
 
 Дальше опишу, что делал я (чистая сертифицированая система 7.2 сразу после установки):  
-`su root`
+`su root`  
 `yum update -y`  
 `yum remove anaconda-core firstboot yumex python34-libs ipa-common python2-policycoreutils python2-caja caja-schemas mariadb-server pcs libreport python-ntplib libvncserver bind-libs-lite -y`  
 `yum autoremove -y`  
