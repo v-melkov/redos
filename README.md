@@ -154,3 +154,29 @@ __Настройки:__
 Дальше необходимо на каждом пользователе, от которого хочешь принимать файлы автоматически, щёлкнуть правой клавишей - Автоматический прием файлов - Принять автоматически  
 Средства - Модули - История  
 Средства - Модули - Кнопка отправки  
+
+## Установка и настройка удалённого доступа x11vnc
+`su root`
+
+Устанавливаем пакет x11vnc:  
+`dnf install x11vnc -y`  
+Сохраняем пароль для доступа (пароль придумываем посложнее):  
+`x11vnc -storepasswd "__ПРИДУМАЙ-ПАРОЛЬ__" /etc/vncpasswd`  
+
+Настраиваем автоматический запуск:  
+  
+  echo '[Unit]
+  Description=X11vnc server for GDM
+  After=display-manager.service
+  [Service]
+  ExecStart=/usr/bin/x11vnc -many -shared -display :0 -auth guess -noxdamage -rfbauth /etc/vncpasswd
+  Restart=on-failure
+  RestartSec=3
+  [Install]
+  WantedBy=graphical.target' > /lib/systemd/system/x11vnc.service
+  systemctl daemon-reload
+  systemctl enable --now x11vnc.service
+  
+Проверим запуск службы:  
+`systemctl status x11vnc.service`  
+
