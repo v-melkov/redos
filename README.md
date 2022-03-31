@@ -179,7 +179,6 @@ __Настройки:__
     WantedBy=graphical.target' > /lib/systemd/system/x11vnc.service
     systemctl daemon-reload
     systemctl enable --now x11vnc.service
-    echo "Press enter to show status"
     systemctl status x11vnc.service
   
 Можно запускать клиент Remmina и подключаться  
