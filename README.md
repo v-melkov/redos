@@ -155,9 +155,11 @@ __Настройки:__
 Средства - Модули - История  
 Средства - Модули - Кнопка отправки  
 
-## Установка и настройка удалённого доступа x11vnc
+## Установка и настройка удалённого доступа x11vnc (RedOS 7.3)
+Для RedOS 7.2 смотри инструкцию [здесь](https://redos.red-soft.ru/base/server-configuring/remote-control/x11vnc/?sphrase_id=12060)  
+  
 `su root`
-
+  
 Устанавливаем пакет x11vnc:  
 `dnf install x11vnc -y`  
 
@@ -177,8 +179,10 @@ __Настройки:__
     WantedBy=graphical.target' > /lib/systemd/system/x11vnc.service
     systemctl daemon-reload
     systemctl enable --now x11vnc.service
-    
+    echo
   
 Проверим запуск службы:  
 `systemctl status x11vnc.service`  
+  
+Можно запускать клиент Remmina и подключаться  
 
