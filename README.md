@@ -162,7 +162,7 @@ __Настройки:__
 `dnf install x11vnc -y`  
 
 Сохраняем пароль для доступа (пароль придумываем посложнее):  
-`x11vnc -storepasswd "__ПРИДУМАЙ-ПАРОЛЬ__" /etc/vncpasswd`  
+`x11vnc -storepasswd "ПРИДУМАЙ_ПАРОЛЬ_И_ВСТАВЬ_СЮДА" /etc/vncpasswd`  
 
 Настраиваем автоматический запуск:  
   
@@ -177,6 +177,7 @@ __Настройки:__
     WantedBy=graphical.target' > /lib/systemd/system/x11vnc.service
     systemctl daemon-reload
     systemctl enable --now x11vnc.service
+    
   
 Проверим запуск службы:  
 `systemctl status x11vnc.service`  
