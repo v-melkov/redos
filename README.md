@@ -180,9 +180,7 @@ __Настройки:__
     systemctl daemon-reload
     systemctl enable --now x11vnc.service
     echo
-  
-Проверим запуск службы:  
-`systemctl status x11vnc.service`  
+    systemctl status x11vnc.service
   
 Можно запускать клиент Remmina и подключаться  
 
