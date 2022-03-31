@@ -160,22 +160,23 @@ __Настройки:__
 
 Устанавливаем пакет x11vnc:  
 `dnf install x11vnc -y`  
+
 Сохраняем пароль для доступа (пароль придумываем посложнее):  
 `x11vnc -storepasswd "__ПРИДУМАЙ-ПАРОЛЬ__" /etc/vncpasswd`  
 
 Настраиваем автоматический запуск:  
   
-  echo '[Unit]
-  Description=X11vnc server for GDM
-  After=display-manager.service
-  [Service]
-  ExecStart=/usr/bin/x11vnc -many -shared -display :0 -auth guess -noxdamage -rfbauth /etc/vncpasswd
-  Restart=on-failure
-  RestartSec=3
-  [Install]
-  WantedBy=graphical.target' > /lib/systemd/system/x11vnc.service
-  systemctl daemon-reload
-  systemctl enable --now x11vnc.service
+    echo '[Unit]
+    Description=X11vnc server for GDM
+    After=display-manager.service
+    [Service]
+    ExecStart=/usr/bin/x11vnc -many -shared -display :0 -auth guess -noxdamage -rfbauth /etc/vncpasswd
+    Restart=on-failure
+    RestartSec=3
+    [Install]
+    WantedBy=graphical.target' > /lib/systemd/system/x11vnc.service
+    systemctl daemon-reload
+    systemctl enable --now x11vnc.service
   
 Проверим запуск службы:  
 `systemctl status x11vnc.service`  
