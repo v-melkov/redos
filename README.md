@@ -206,8 +206,7 @@ __Настройки:__
     chmod 777 /mnt/obmen
     echo -e "username=user1\npassword=1234\ndomain=SAMBA" > /root/.obmen
     chmod 400 /root/.obmen
-    echo "//10.13.62.251/obmen/SHARE /mnt/obmen cifs_
-    credentials=/root/.obmen,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab
+    echo "//10.13.62.251/obmen/SHARE /mnt/obmen cifs credentials=/root/.obmen,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab
     mount -a
     exit
 
