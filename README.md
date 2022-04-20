@@ -214,7 +214,7 @@ __Настройки:__
 Установка remmina:  
 
     snap install remmina
-    ln -s /home/$(whoami)/.ssh/ /home/$(whoami)/snap/remmina/common/  # ссылка на ключи SSH
+    ln -s /home/$(whoami)/.ssh /home/$(whoami)/snap/remmina/common/  # ссылка на ключи SSH
     sudo snap connect remmina:avahi-observe :avahi-observe # servers discovery
     sudo snap connect remmina:cups-control :cups-control # printing
     sudo snap connect remmina:mount-observe :mount-observe # mount management
