@@ -212,6 +212,7 @@ __Настройки:__
     ln -s /var/lib/snapd/snap/ /snap/
 
 Установка remmina:  
+
     snap install remmina
     ln -s /home/$(whoami)/.ssh/ /home/$(whoami)/snap/remmina/common/  # ссылка на ключи SSH
     sudo snap connect remmina:avahi-observe :avahi-observe # servers discovery
