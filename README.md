@@ -6,6 +6,7 @@
 - [Р7-офис](#r7-office)
 - [Pidgin](#pidgin)
 - [x11vnc](#x11vnc)
+- [remmina](#remmina)
 - [Подключение сетевого каталога (межгород)](#cifs_mount)
 - [Настройка SSH](#ssh)
 
@@ -201,6 +202,27 @@ __Настройки:__
     systemctl status x11vnc.service
 
 Можно запускать клиент Remmina и подключаться  
+
+##  Установка remmina из snap <a name="remmina"></a>
+После последнего обновления отвалился плагин RDP для remmina  
+Установил из snap:  
+Установка самого snapd:  
+`su root`  
+    dnf install snapd
+    ln -s /var/lib/snapd/snap/ /snap/
+
+Установка remmina:  
+    snap install remmina
+    ln -s /home/$(whoami)/.ssh/ /home/$(whoami)/snap/remmina/common/  # ссылка на ключи SSH
+    sudo snap connect remmina:avahi-observe :avahi-observe # servers discovery
+    sudo snap connect remmina:cups-control :cups-control # printing
+    sudo snap connect remmina:mount-observe :mount-observe # mount management
+    sudo snap connect remmina:password-manager-service :password-manager-service # password manager
+    sudo snap connect remmina:audio-playback :audio-playback # audio sharing
+    sudo snap connect remmina:audio-record :audio-record # microphone
+
+Чтобы подтянуть сохранённые соединения в параметрах remmina выбрать Папку данных /home/_user_/.local/share/remmina  
+
 
 ## Подключение сетевого каталога (межгород) <a name="cifs_mount"></a>  
 скрипт не проверяет наличие строки для монтирования в fstab!  
