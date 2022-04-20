@@ -208,6 +208,7 @@ __Настройки:__
 Установил из snap:  
 Установка самого snapd:  
 `su root`  
+
     dnf install snapd
     ln -s /var/lib/snapd/snap/ /snap/
 
