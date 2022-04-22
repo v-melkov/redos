@@ -31,7 +31,7 @@
 `su root`  
 
     yum update -y
-    yum remove anaconda-core firstboot yumex python34-libs ipa-common python2-policycoreutils python2-caja caja-schemas mariadb-server pcs libreport python-ntplib libvncserver bind-libs-lite -y
+    yum remove anaconda-core firstboot yumex python34-libs ipa-common python2-policycoreutils python2-caja caja-schemas mariadb-server pcs libreport python-ntplib libvncserver bind-libs-lite freerdp* -y
     yum autoremove -y
     sed -i 's!7.2!7.3!g' /etc/yum.repos.d/*.repo && yum clean all && yum makecache
 
@@ -236,13 +236,29 @@ __Настройки:__
     chmod 400 /root/.obmen
     echo "//10.13.62.251/obmen/SHARE /mnt/obmen cifs credentials=/root/.obmen,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab
     mount -a
-    echo "mount -a &" >> /etc/gdm/PreSession/Default
     exit
 
 Создаём ссылку на рабочем столе пользователя (запускать под пользователем)  
 
-    ln -s /mnt/obmen /home/`whoami`/Рабочий\ стол/Общая\ межгород
+    ln -s /mnt/obmen /home/`whoami`/Рабочий\ стол/Обмен
 
+Подключение папки с FineReader  
+
+    mkdir /mnt/finereader
+    chmod 777 /mnt/finereader
+    echo -e "username=Администратор\npassword=1\ndomain=SAMBA" > /root/.finereader
+    chmod 400 /root/.finereader
+    echo "//10.13.62.1/finereader /mnt/finereader cifs credentials=/root/.finereader,vers=1.0,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab
+    mount -a
+    exit
+
+Создаём ссылку на рабочем столе пользователя (запускать под пользователем)  
+
+    ln -s /mnt/finereader /home/`whoami`/Рабочий\ стол/Преобразовать\ в\ Word
+
+Монтирование при входе пользователя  
+
+    echo "mount -a &" >> /etc/gdm/PreSession/Default
 
 ## SSH <a name="ssh"></a>
 На сервере (локально) запускаем SSHD:  
