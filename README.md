@@ -9,6 +9,7 @@
 - [remmina](#remmina)
 - [Подключение сетевого каталога (межгород)](#cifs_mount)
 - [Настройка SSH](#ssh)
+- [Сетевой принтер](#printing)
 
 
 ## Установка сертифицированной RedOS <a name="install_redos"></a>
@@ -124,8 +125,8 @@ __Лицензия:__
 
 ## Чат <a name="chat"></a>
 
-[Скачать Spark](https://www.igniterealtime.org/downloadServlet?filename=spark/spark_2_9_4-with-jre.exe) для Windows
-[Скачать Spark](https://www.igniterealtime.org/downloadServlet?filename=spark/spark-2.9.4.rpm) для Linux
+[Скачать Spark](https://www.igniterealtime.org/downloadServlet?filename=spark/spark_2_9_4-with-jre.exe) для Windows  
+[Скачать Spark](https://www.igniterealtime.org/downloadServlet?filename=spark/spark-2.9.4.rpm) для Linux  
 
 Домен: 10.13.62.50  
 Перед первым подключением щёлкнуть Дополнительно - вкладка Security - поставить галочку Disable certificate hostname verification  
@@ -230,3 +231,13 @@ __Лицензия:__
 
     sed -i 's!#PasswordAuthentication yes!PasswordAuthentication no!g' /etc/ssh/sshd_config
     systemctl restart sshd  
+
+
+## Простой способ печати с РедОС на принтер в винде <a name="printing"></a>  
+#### Windows  
+_Включение или отключение компонентов Windows_ > _Службы печати и документов_ > _Служба печати LPD_  
+Перезагружаемся, расшариваем принтер как обычно (Имя принтера не должно содержать пробелов и тому подобное т.е. должно быть что то вроде "HP1020")  
+#### RedOS  
+_Администрирование_ > _Настройки принтера_ > _Добавить_  
+_Сетевой принтер_ > _Хост или принтер LPD/LPR_  
+В строке Cервер прописываем "_IP или имя машины/название принтера_". Далее устанавливаем драйвер и все.  
