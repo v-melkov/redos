@@ -7,6 +7,7 @@
 - [Чат](#chat)
 - [x11vnc](#x11vnc)
 - [remmina](#remmina)
+- [rdesktop](#rdesktop)
 - [Подключение сетевого каталога (межгород)](#cifs_mount)
 - [Настройка SSH](#ssh)
 - [Сетевой принтер](#printing)
@@ -183,6 +184,13 @@ __Лицензия:__
 
 Чтобы подтянуть сохранённые соединения в параметрах remmina выбрать Папку данных /home/_user_/.local/share/remmina  
 
+## Установка rdesktop <a name="rdesktop"></a>  
+Под рутом:  
+`dnf install rdesktop`  
+
+Под пользователем:  
+
+    read -p 'Имя пользователя: ' USERNAME && read -p 'Пароль: ' PASSWORD && read -p 'Адрес сервера: ' SERVER_IP && echo -e '#!/usr/bin/env bash\nUSERNAME=user\nPASSWORD=pass\nSERVER_IP=server\nrdesktop -z -P -g 1280x900 -u $USERNAME -p $PASSWORD $SERVER_IP' > /home/$(whoami)/Рабочий\ стол/$(echo $SERVER_IP).connection && sed -i "s|user|$USERNAME|" /home/$(whoami)/Рабочий\ стол/$(echo $SERVER_IP).connection && sed -i "s|pass|$PASSWORD|" /home/$(whoami)/Рабочий\ стол/$(echo $SERVER_IP).connection && sed -i "s|server|$SERVER_IP|" /home/$(whoami)/Рабочий\ стол/$(echo $SERVER_IP).connection && chmod +x /home/$(whoami)/Рабочий\ стол/$(echo $SERVER_IP).connection
 
 ## Подключение сетевых каталогов <a name="cifs_mount"></a>  
 скрипт не проверяет наличие строки для монтирования в fstab!  
