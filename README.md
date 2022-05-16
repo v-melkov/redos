@@ -6,7 +6,6 @@
 - [Р7-офис](#r7-office)
 - [Чат](#chat)
 - [x11vnc](#x11vnc)
-- [remmina](#remmina)
 - [rdesktop](#rdesktop)
 - [Подключение сетевого каталога (межгород)](#cifs_mount)
 - [Настройка SSH](#ssh)
@@ -111,17 +110,17 @@ VeraCrypt есть для всех ОС - рекомендую пользова�
 Скачать актуальную версию Р7-офис для RedOS (и других ОС) можно по [ссылке](https://r7-office.ru/downloads)  
 
 __Установка шрифта по умолчанию самостоятельно:__  
-Открыть от имени админа файлы /opt/r7-office/desktopeditors/converter/empty/new.\*, поменять шрифт на Libre Serif и сохранить  
+Открыть от имени админа файлы `/opt/r7-office/desktopeditors/converter/empty/new.\*`, поменять шрифт на Libre Serif и сохранить  
 
 __Установка шрифта по умолчанию в Windows:__  
-Файлы находятся в папке C:\\Program Files\\R7-Office\\Editors\\converter\\empty  
+Файлы находятся в папке `C:\\Program Files\\R7-Office\\Editors\\converter\\empty`  
 
 __Плагины:__  
 [плагин](https://disk.yandex.ru/d/W9ztR5q_FoXWrg) для подсчёта символов и слов в выделеном фрагменте  
 
 __Лицензия:__  
-Если возникают проблемы с лицензией, почистите папку C:\\ProgramData\\R7-Office\\License  
-В линуксе файл лицензии лежит в /etc/r7-office/license/  
+Если возникают проблемы с лицензией, почистите папку `C:\\ProgramData\\R7-Office\\License`  
+В линуксе файл лицензии лежит в `/etc/r7-office/license/`  
 
 
 ## Чат <a name="chat"></a>
@@ -161,28 +160,6 @@ __Лицензия:__
     systemctl status x11vnc.service
 
 Можно запускать клиент Remmina и подключаться  
-
-##  Установка remmina из snap <a name="remmina"></a>
-После последнего обновления отвалился плагин RDP для remmina  
-Установил из snap:  
-Установка самого snapd:  
-`su root`  
-
-    dnf install snapd
-    ln -s /var/lib/snapd/snap/ /snap/
-
-Установка remmina:  
-
-    snap install remmina
-    ln -s /home/$(whoami)/.ssh /home/$(whoami)/snap/remmina/common/  # ссылка на ключи SSH
-    sudo snap connect remmina:avahi-observe :avahi-observe # servers discovery
-    sudo snap connect remmina:cups-control :cups-control # printing
-    sudo snap connect remmina:mount-observe :mount-observe # mount management
-    sudo snap connect remmina:password-manager-service :password-manager-service # password manager
-    sudo snap connect remmina:audio-playback :audio-playback # audio sharing
-    sudo snap connect remmina:audio-record :audio-record # microphone
-
-Чтобы подтянуть сохранённые соединения в параметрах remmina выбрать Папку данных /home/_user_/.local/share/remmina  
 
 ## Установка rdesktop <a name="rdesktop"></a>  
 Под рутом:  
@@ -249,3 +226,8 @@ _Включение или отключение компонентов Windows_ 
 _Администрирование_ > _Настройки принтера_ > _Добавить_  
 _Сетевой принтер_ > _Хост или принтер LPD/LPR_  
 В строке Cервер прописываем "_IP или имя машины/название принтера_". Далее устанавливаем драйвер и все.  
+
+
+## Установка необходимых программ <a name="programs"></a>  
+
+    sudo dnf install flameshot
