@@ -18,6 +18,7 @@
 Образ сертифицированной версии 7.2 [здесь](https://disk.yandex.ru/d/GTulgkvV7m_qMA)  
 
 Создание загрузочной флешки [тут](https://redos.red-soft.ru/base/manual/red-os-installation/iso-to-usb-cd-dvd/). Для винды рекомендую [rufus](https://github.com/pbatard/rufus/releases/download/v3.17/rufus-3.17.exe)  
+В rufus создавать флешку в режиме **dd**  
 
 ## Обновление RedOS 7.2c до версии 7.3c <a name="update_redos"></a>
 На сайте редоса есть подробная [статья](https://redos.red-soft.ru/base/update/update-to-7-3/) по обновлению с 7.2 на 7.3  
