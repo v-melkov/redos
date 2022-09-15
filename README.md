@@ -14,31 +14,19 @@
 
 ## Установка сертифицированной RedOS <a name="install_redos"></a>
 
+На новые машины ставьте 7.3с!  
+  
 Образ сертифицированной версии 7.3 [здесь](https://disk.yandex.ru/d/6Du23QhPuLV6FA)  
 Образ сертифицированной версии 7.2 [здесь](https://disk.yandex.ru/d/GTulgkvV7m_qMA)  
 
-Создание загрузочной флешки [тут](https://redos.red-soft.ru/base/manual/red-os-installation/iso-to-usb-cd-dvd/). Для винды рекомендую [rufus](https://github.com/pbatard/rufus/releases/download/v3.17/rufus-3.17.exe)  
+Создание загрузочной флешки 
+Upd 15.09.2022 - используйте [Ventoy](https://www.ventoy.net/en/download.html)  [Habr](https://habr.com/ru/company/ruvds/blog/584670/)  
+[Сайт redos](https://redos.red-soft.ru/base/manual/red-os-installation/iso-to-usb-cd-dvd/). Для винды рекомендую [rufus](https://github.com/pbatard/rufus/releases/download/v3.17/rufus-3.17.exe)  
 В rufus создавать флешку в режиме **dd**  
 
 ## Обновление RedOS 7.2c до версии 7.3c <a name="update_redos"></a>
+Upd 15.09.2022 - не работает - ставьте сразу 7.3  
 На сайте редоса есть подробная [статья](https://redos.red-soft.ru/base/update/update-to-7-3/) по обновлению с 7.2 на 7.3  
-
-Дальше опишу, что делал я (чистая сертифицированая система 7.2 сразу после установки):  
-`su root`  
-
-    yum update -y
-    yum remove anaconda-core firstboot yumex python34-libs ipa-common python2-policycoreutils python2-caja caja-schemas mariadb-server pcs libreport python-ntplib libvncserver bind-libs-lite freerdp* -y
-    yum autoremove -y
-    sed -i 's!7.2!7.3!g' /etc/yum.repos.d/*.repo && yum clean all && yum makecache
-
-Переходим в консольный режим (в графическом будут ошибки - проверено):  
-Жмём __Ctrl+Alt+F2__, логин _root_, пароль (при наборе не виден), набираем `systemctl stop gdm`, опять жмём __Ctrl+Alt+F2__  
-`yum update kernel-lt systemd yum grub2 redos-release -x wine* -y`  
-`dnf update -y`  
-`dnf install libyui-mga-gtk -y`  
-`dnf groupinstall mate-desktop -y`  
-`reboot`  
-
 
 ## CryptoPro <a name="cryptopro"></a>
 Скачай дистрибутив с сайта [КриптоПро](https://www.cryptopro.ru/products/csp/downloads) (КриптоПро CSP 5.0 для Linux (x64, rpm))  
