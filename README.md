@@ -20,11 +20,7 @@
 Образ сертифицированной версии 7.2 [здесь](https://disk.yandex.ru/d/GTulgkvV7m_qMA)  
 
 Создание загрузочной флешки 
-<<<<<<< HEAD
 Upd: 15.09.2022 - используйте [Ventoy](https://www.ventoy.net/en/download.html) - статья на [Habr](https://habr.com/ru/company/ruvds/blog/584670/)  
-=======
-Upd: 15.09.2022 - используйте [Ventoy](https://www.ventoy.net/en/download.html) статья на [Habr](https://habr.com/ru/company/ruvds/blog/584670/)  
->>>>>>> ef0882e4ad23c72b4159258260766f1d01a0d28c
 [Сайт redos](https://redos.red-soft.ru/base/manual/red-os-installation/iso-to-usb-cd-dvd/). Для винды рекомендую [rufus](https://github.com/pbatard/rufus/releases/download/v3.17/rufus-3.17.exe)  
 В rufus создавать флешку в режиме **dd**  
 
