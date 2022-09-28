@@ -20,12 +20,12 @@
 Образ сертифицированной версии 7.2 [здесь](https://disk.yandex.ru/d/GTulgkvV7m_qMA)  
 
 Создание загрузочной флешки 
-Upd 15.09.2022 - используйте [Ventoy](https://www.ventoy.net/en/download.html)  [Habr](https://habr.com/ru/company/ruvds/blog/584670/)  
+Upd: 15.09.2022 - используйте [Ventoy](https://www.ventoy.net/en/download.html) (статья на [Habr])(https://habr.com/ru/company/ruvds/blog/584670/)  
 [Сайт redos](https://redos.red-soft.ru/base/manual/red-os-installation/iso-to-usb-cd-dvd/). Для винды рекомендую [rufus](https://github.com/pbatard/rufus/releases/download/v3.17/rufus-3.17.exe)  
 В rufus создавать флешку в режиме **dd**  
 
 ## Обновление RedOS 7.2c до версии 7.3c <a name="update_redos"></a>
-Upd 15.09.2022 - не работает - ставьте сразу 7.3  
+Upd: 15.09.2022 - не работает - ставьте сразу 7.3  
 На сайте редоса есть подробная [статья](https://redos.red-soft.ru/base/update/update-to-7-3/) по обновлению с 7.2 на 7.3  
 
 ## CryptoPro <a name="cryptopro"></a>
@@ -82,8 +82,7 @@ Upd 15.09.2022 - не работает - ставьте сразу 7.3
 
 Если закинуть зашифрованый файловый контейнер на яндекс диск (к примеру), можно использовать его и в других системах на других компьютерах. Не забудь задать суперсложный пароль при создании файлового контейнера!  
 
-Можно создать пару зашифрованных контейнеров - один для неактуальных ЭЦП, второй для актуальных  
-VeraCrypt есть для всех ОС - рекомендую пользоваться ей и под виндой (там можно поставить авторазмонтирование - вообще красота)   
+Можно создать пару зашифрованных контейнеров - один для неактуальных ЭЦП, второй для актуальных     
 
 ### Установка Chromium-Gost <a name="chromium-gost"></a>
 Для работы с ЭЦП рекомендую использовать браузер chromium-gost и больше ни для чего его не юзать!  
@@ -116,8 +115,7 @@ __Лицензия:__
 
 [Скачать Spark](https://www.igniterealtime.org/downloadServlet?filename=spark/spark_2_9_4-with-jre.exe) для Windows  
 [Скачать Spark](https://www.igniterealtime.org/downloadServlet?filename=spark/spark-2.9.4.rpm) для Linux  
-
-Домен: 10.13.62.50  
+ 
 Перед первым подключением щёлкнуть Дополнительно - вкладка Security - поставить галочку Disable certificate hostname verification  
 
 ## Установка и настройка удалённого доступа x11vnc (RedOS 7.3) <a name="x11vnc"></a>
