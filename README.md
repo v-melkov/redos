@@ -42,6 +42,19 @@ Upd: 15.09.2022 - не работает - ставьте сразу 7.3
 Ввести лицензию свою лицензию или: _50500-00000-0Z000-00M22-0GF2D_ Выход  
 В менюшке Инструменты КриптоПро - проверь лицензию  
 
+### Установка КриптоПро ЭЦП Browser plugin  
+Скачиваем [отсюда](https://cryptopro.ru/products/cades/plugin/get_2_0)  
+
+    cd ~  
+    cd Загрузки
+    tar -xzf cades-linux-amd64.tar.gz -C linux-amd64
+    cd linux-amd64
+    su root --command='rpm -i cprocsp-pki-*.rpm'
+
+Проверка плагина [здесь](https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html)  
+
+
+
 ### Установка VeraCrypt <a name="veracrypt"></a>
 
 КриптоПро видит контейнеры HDD только в определённом каталоге  
