@@ -1,6 +1,6 @@
 - [Установка сертифицированной RedOS](#install_redos)
 - [Обновление до версии 7.3 certified](#update_redos)
-- [CryptoPro](#cryptopro)
+- [КриптоПро](#cryptopro)
     + [Установка КриптоПро ЭЦП browser plugin](#cryptopro_browser_plugin)
     + [Установка VeraCrypt](#veracrypt)
     + [Установка Chromium-Gost](#chromium-gost)
@@ -29,7 +29,7 @@ Upd: 15.09.2022 - используйте [Ventoy](https://www.ventoy.net/en/down
 Upd: 15.09.2022 - не работает - ставьте сразу 7.3  
 На сайте редоса есть подробная [статья](https://redos.red-soft.ru/base/update/update-to-7-3/) по обновлению с 7.2 на 7.3  
 
-## CryptoPro <a name="cryptopro"></a>
+## КриптоПро <a name="cryptopro"></a>
 Скачай дистрибутив с сайта [КриптоПро](https://www.cryptopro.ru/products/csp/downloads) (КриптоПро CSP 5.0 для Linux (x64, rpm))  
 или [отсюда](https://disk.yandex.ru/d/pAfPZadoqroDPA)
 
@@ -52,7 +52,20 @@ Upd: 15.09.2022 - не работает - ставьте сразу 7.3
     cd linux-amd64
     su root --command='rpm -i cprocsp-pki-*.rpm'
 
+В браузере chromium расширение появится самостоятельно (если не появилось, смотри ниже Расширения)  
+
+Для Яндекс браузера качаем расширение [отсюда](https://addons.opera.com/ru/extensions/details/cryptopro-extension-for-cades-browser-plug-in/)  
+
 Проверка плагина [здесь](https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html)  
+
+### Расширения для Госуслуг и Контура  
+В связи с тем, что Chrome Web store не работает:  
+
+качаем папку с нужным расширением [отсюда](https://disk.yandex.ru/d/i6usTuThyWLK2A) (ссылка моя)  
+
+далее в **Chromium Gost** - Дополнительные инструменты - Расширения. В правом верхнем углу включаем Режим разработчика. Кнопка Загрузить распакованное расширение - Заходим в скачанную папку! - кнопка Открыть  
+
+далее в **Яндекс браузер** - Дополнения. Мышкой перетаскиваем скачанную папку в открывшуюся вкладку  
 
 
 
