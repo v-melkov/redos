@@ -1,6 +1,7 @@
 - [Установка сертифицированной RedOS](#install_redos)
 - [Обновление до версии 7.3 certified](#update_redos)
 - [CryptoPro](#cryptopro)
+    + [Установка КриптоПро ЭЦП browser plugin](#cryptopro_browser_plugin)
     + [Установка VeraCrypt](#veracrypt)
     + [Установка Chromium-Gost](#chromium-gost)
 - [Р7-офис](#r7-office)
@@ -42,7 +43,7 @@ Upd: 15.09.2022 - не работает - ставьте сразу 7.3
 Ввести лицензию свою лицензию или: _50500-00000-0Z000-00M22-0GF2D_ Выход  
 В менюшке Инструменты КриптоПро - проверь лицензию  
 
-### Установка КриптоПро ЭЦП Browser plugin  
+### Установка КриптоПро ЭЦП Browser plugin <a name="cryptopro_browser_plugin"></a>
 Скачиваем [отсюда](https://cryptopro.ru/products/cades/plugin/get_2_0)  
 
     cd ~  
