@@ -2,6 +2,7 @@
 - [Обновление до версии 7.3 certified](#update_redos)
 - [КриптоПро](#cryptopro)
     + [Установка КриптоПро ЭЦП browser plugin](#cryptopro_browser_plugin)
+    + [Расширения для браузеров](#browser_extensions)
     + [Установка VeraCrypt](#veracrypt)
     + [Установка Chromium-Gost](#chromium-gost)
 - [Р7-офис](#r7-office)
@@ -58,7 +59,7 @@ Upd: 15.09.2022 - не работает - ставьте сразу 7.3
 
 Проверка плагина [здесь](https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html)  
 
-### Расширения для Госуслуг и Контура  
+### Расширения для Госуслуг и Контура <a name="browser_extensions"> </a>
 В связи с тем, что Chrome Web store не работает:  
 
 качаем папку с нужным расширением [отсюда](https://disk.yandex.ru/d/i6usTuThyWLK2A) (ссылка моя)  
