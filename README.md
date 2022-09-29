@@ -74,10 +74,7 @@ Upd: 15.09.2022 - не работает - ставьте сразу 7.3
 Он часто обновляется, так что почаще жми ссылку ниже для обновления  
 
 Скачай и установи [посдедний chromium-gost](https://github.com/deemru/Chromium-Gost/releases/latest/) (rpm)  
-
-#### Настройка Chromium-Gost
-~~Открой в chromium-gost: [Контур.Веб-диск](https://install.kontur.ru/uc)~~
-не работает, настраивай вручную  
+ 
 
 ### Установка VeraCrypt <a name="veracrypt"></a>
 
