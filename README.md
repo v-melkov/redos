@@ -131,7 +131,13 @@ __Установка шрифта по умолчанию в Windows:__
 Файлы находятся в папке `C:\\Program Files\\R7-Office\\Editors\\converter\\empty`  
 
 __Плагины:__  
-[плагин](https://disk.yandex.ru/d/W9ztR5q_FoXWrg) для подсчёта символов и слов в выделеном фрагменте  
+[Плагины для Р7-офиса](https://disk.yandex.ru/d/xIlCcAumIdQucA) 
+drawio - вставка диаграмм draw.io
+photoeditor - редактор изображений
+speech - текст в речь
+translator - гугл переводчик
+typograf - исправление типографских ошибок
+wordscounter - подсчёт символов и слов  
 
 __Лицензия:__  
 Если возникают проблемы с лицензией, почистите папку `C:\\ProgramData\\R7-Office\\License`  
