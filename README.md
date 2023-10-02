@@ -17,20 +17,13 @@
 __Все файлы на Яндекс диске загружены мной__
 
 ## Установка сертифицированной RedOS <a name="install_redos"></a>
-
-На новые машины ставьте 7.3с!  
   
 Образ сертифицированной версии 7.3 [здесь](https://disk.yandex.ru/d/6Du23QhPuLV6FA)  
 Образ сертифицированной версии 7.2 [здесь](https://disk.yandex.ru/d/GTulgkvV7m_qMA)  
 
 Создание загрузочной флешки 
-Upd: 15.09.2022 - используйте [Ventoy](https://www.ventoy.net/en/download.html) - статья на [Habr](https://habr.com/ru/company/ruvds/blog/584670/)  
-[Сайт redos](https://redos.red-soft.ru/base/manual/red-os-installation/iso-to-usb-cd-dvd/). Для винды рекомендую [rufus](https://github.com/pbatard/rufus/releases/download/v3.17/rufus-3.17.exe)  
+Используйте [Ventoy](https://www.ventoy.net/en/download.html)  
 В rufus создавать флешку в режиме **dd**  
-
-## Обновление RedOS 7.2c до версии 7.3c <a name="update_redos"></a>
-Upd: 15.09.2022 - не работает - ставьте сразу 7.3  
-~~На сайте редоса есть подробная [статья](https://redos.red-soft.ru/base/update/update-to-7-3/) по обновлению с 7.2 на 7.3~~  
 
 ## КриптоПро <a name="cryptopro"></a>
 Скачай дистрибутив с сайта [КриптоПро](https://www.cryptopro.ru/products/csp/downloads) (КриптоПро CSP 5.0 для Linux (x64, rpm))  
@@ -45,38 +38,21 @@ Upd: 15.09.2022 - не работает - ставьте сразу 7.3
 Далее - Далее - Установить  
 Ввести лицензию свою лицензию или: _50500-00000-0Z000-00M22-0GF2D_ Выход  
 В менюшке Инструменты КриптоПро - проверь лицензию  
-
-### Установка Chromium-Gost <a name="chromium-gost"></a>
-Для работы с ЭЦП рекомендую использовать браузер chromium-gost и больше ни для чего его не юзать или пользоваться Профилями    
-Он часто обновляется, так что почаще жми ссылку ниже для обновления  
-
-Скачай и установи [посдедний chromium-gost](https://github.com/deemru/Chromium-Gost/releases/latest/) (rpm)  
-
+  
 ### Установка КриптоПро ЭЦП Browser plugin <a name="cryptopro_browser_plugin"></a>
 Скачиваем [отсюда](https://cryptopro.ru/products/cades/plugin/get_2_0)  
 
     cd ~  
     cd Загрузки
-    tar -xzf cades-linux-amd64.tar.gz -C linux-amd64
-    cd linux-amd64
+    tar -xzf cades-linux-amd64.tar.gz
+    cd cades-linux-amd64
     su root --command='rpm -i cprocsp-pki-*.rpm'
-
-В браузере chromium расширение появится самостоятельно (если не появилось, смотри ниже Расширения)  
 
 Для Яндекс браузера качаем расширение [отсюда](https://addons.opera.com/ru/extensions/details/cryptopro-extension-for-cades-browser-plug-in/)  
 
 Проверка плагина [здесь](https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html)  
-
-### Расширения для Госуслуг и Контура <a name="browser_extensions"> </a>
-В связи с тем, что Chrome Web store не работает:  
-
-качаем папку с нужным расширением [отсюда](https://disk.yandex.ru/d/i6usTuThyWLK2A)  
-
-далее в **Chromium Gost** - Дополнительные инструменты - Расширения. В правом верхнем углу включаем Режим разработчика. Кнопка Загрузить распакованное расширение - Заходим в скачанную папку! - кнопка Открыть  
-
-далее в **Яндекс браузер** - Дополнения. Мышкой перетаскиваем скачанную папку в открывшуюся вкладку  
   
-Для Госуслуг дополнительно устанавливаем плагин: `sudo dnf install ifcplugin-chromium`  
+Дополнительно устанавливаем плагин: `sudo dnf install ifcplugin-chromium`  
 Установка корневых сертификатов: `sudo dnf install ca-certificates-ru`  
 
 ### Установка VeraCrypt <a name="veracrypt"></a>
@@ -86,7 +62,7 @@ Upd: 15.09.2022 - не работает - ставьте сразу 7.3
 
 Каталог, где КриптоПро видит контейнеры: /var/opt/cprocs/keys/имя_пользователя  
 
-#### Я вместо флэшек использую зашифрованный файловый контейнер __VeraCrypt__  
+#### Зашифрованный файловый контейнер __VeraCrypt__  
 
 Скачивай [VeraCrypt](https://veracrypt.fr/en/Downloads.html) (RPM packages: CentOS 8/Fedora 34: GUI)  
 Устанавливай, запускай, дальше по шагам:  
@@ -114,22 +90,9 @@ Upd: 15.09.2022 - не работает - ставьте сразу 7.3
 - Инструменты КриптоПро - Контейнеры - Установить сертификат
 
 В дальнейшем для использования этого зашифрованного контейнера с контейнерами)) в __VeraCrypt__ щёлкай __Избранное__ - свой том (внизу)  
-
-В линуксовой версии VeraCrypt нет опции авторазмонтирования по тайм-ауту (или я не нашёл). Размонтируй вручную!  
-
-Если закинуть зашифрованый файловый контейнер на яндекс диск (к примеру), можно использовать его и в других системах на других компьютерах. Не забудь задать суперсложный пароль при создании файлового контейнера!  
-
-Можно создать пару зашифрованных контейнеров - один для неактуальных ЭЦП, второй для актуальных     
   
-
 ## Установка Р7-офис <a name="r7-office"></a>
 Скачать актуальную версию Р7-офис для RedOS (и других ОС) можно по [ссылке](https://r7-office.ru/download_editor#3_2))  
-
-__Установка шрифта по умолчанию самостоятельно:__  
-Открыть от имени админа файлы `/opt/r7-office/desktopeditors/converter/empty/new.\*`, поменять шрифт на Libre Serif и сохранить  
-
-__Установка шрифта по умолчанию в Windows:__  
-Файлы находятся в папке `C:\\Program Files\\R7-Office\\Editors\\converter\\empty`  
 
 __Плагины:__  
 [Плагины для Р7-офиса](https://disk.yandex.ru/d/xIlCcAumIdQucA)  
@@ -153,7 +116,6 @@ __Лицензия:__
 Перед первым подключением щёлкнуть Дополнительно - вкладка Security - поставить галочку Disable certificate hostname verification  
 
 ## Установка и настройка удалённого доступа x11vnc (RedOS 7.3) <a name="x11vnc"></a>
-Для RedOS 7.2 смотри инструкцию [здесь](https://redos.red-soft.ru/base/server-configuring/remote-control/x11vnc/?sphrase_id=12060)  
 
 `su root`
 
