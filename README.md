@@ -198,8 +198,8 @@ __Лицензия:__
 
 Логинимся на сервер `ssh user@server` (пароль не запрашивается) и отключаем парольную аутентификацию:  
 
-    sed -i 's!#PasswordAuthentication yes!PasswordAuthentication no!g' /etc/ssh/sshd_config
-    systemctl restart sshd  
+    sudo sed -i 's!#PasswordAuthentication yes!PasswordAuthentication no!g' /etc/ssh/sshd_config
+    sudo systemctl restart sshd  
 
 
 ## Простой способ печати с РедОС на принтер в винде <a name="printing"></a>  
