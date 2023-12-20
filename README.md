@@ -13,6 +13,7 @@
 - [Настройка SSH](#ssh)
 - [Сетевой принтер](#printing)
 - [Проверка диска на ошибки](#fsck)
+- [Двухфакторная аутентификация](#2fa)
 
 __Все файлы на Яндекс диске загружены мной__
 
@@ -213,3 +214,33 @@ _Сетевой принтер_ > _Хост или принтер LPD/LPR_
 
 ## Проверка диска на ошибки <a name="fsck"></a>  
 `fsck -y /dev/mapper/ro_redos-root`
+
+
+## Двухфакторная аутентификация  <a name="2fa"></a>
+#### С использованием USB-флешки  
+Установить пакет  
+`sudo dnf install pam_usb`  
+  
+Добавить флешку для использования в качестве токена:   
+`sudo pamusb-conf --add-device flash`
+  
+Добавить пользователя:  
+`sudo pamusb-conf --add-user=$(whoami)`
+  
+В файлах /etc/pam.d/system-auth и /etc/pam.d/password-auth нужно в начало файла добавить строку   
+`auth required pam_usb.so`  
+
+[Статья](https://redos.red-soft.ru/base/manual/safe-redos/pam-usb/?sphrase_id=290649) по настройке на сайте РедОС  
+
+
+#### С использованием приложений на телефоне  
+Устанавливаем на телефон Google Authenticator  
+Устанавливаем пакет   
+`sudo dnf install google-authenticator`  
+
+В файлах /etc/pam.d/system-auth и /etc/pam.d/password-auth нужно в начало файла добавить строку   
+`auth required pam_google_authenticator.so`  
+  
+В терминале запускаем `google-authenticator`, на все вопросы отвечаем Y  
+Сканируем QR-код приложением на телефоне, в ответ будет выведен код. Вводим этот код в терминал на компе (Enter code from app)  
+
