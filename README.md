@@ -174,7 +174,7 @@ __Лицензия:__
 
     mkdir /mnt/finereader
     chmod 777 /mnt/finereader
-    echo -e "username=Администратор\npassword=1\ndomain=SAMBA" > /root/.finereader
+    echo -e "username=adm\npassword=1\ndomain=SAMBA" > /root/.finereader
     chmod 400 /root/.finereader
     echo "//10.13.62.1/finereader /mnt/finereader cifs credentials=/root/.finereader,vers=1.0,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab
     mount -a
