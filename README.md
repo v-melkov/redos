@@ -118,8 +118,8 @@ __Лицензия:__
 
 ## Чат <a name="chat"></a>
 
-[Скачать Spark](https://www.igniterealtime.org/downloadServlet?filename=spark/spark_2_9_4-with-jre.exe) для Windows  
-[Скачать Spark](https://www.igniterealtime.org/downloadServlet?filename=spark/spark-2.9.4.rpm) для Linux  
+[Скачать Spark](https://www.igniterealtime.org/downloadServlet?filename=spark/spark_3_0_2-with-jre.exe) для Windows  
+[Скачать Spark](https://www.igniterealtime.org/downloadServlet?filename=spark/spark-3.0.2.rpm) для Linux  
  
 Перед первым подключением щёлкнуть Дополнительно - вкладка Security - поставить галочку Disable certificate hostname verification  
 
