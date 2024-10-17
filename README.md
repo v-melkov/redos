@@ -78,6 +78,14 @@ __Все файлы на Яндекс диске загружены мной__
 Дополнительно устанавливаем плагин: `sudo dnf install ifcplugin-chromium`  
 Установка корневых сертификатов: `sudo dnf install ca-certificates-ru`  
 
+### Установка Окуляр ГОСТ для штампов ЭП в PDF-файлах  
+
+    sudo -E dnf install lsb-core-noarch
+    sudo -E dnf install cprocsp-rdr-gui-gtk
+    sudo -E dnf config-manager --add-repo http://packages.lab50.net/okular/redos/okularcsp.repo
+    sudo -E dnf install okular-csp
+  
+  
 ### Установка VeraCrypt <a name="veracrypt"></a>
 
 КриптоПро видит контейнеры HDD только в определённом каталоге  
