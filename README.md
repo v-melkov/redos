@@ -2,6 +2,7 @@
 - [Обновление до версии 7.3 certified](#update_redos)
 - [КриптоПро](#cryptopro)
     + [Установка КриптоПро ЭЦП browser plugin](#cryptopro_browser_plugin)
+    + [Установка Окуляр ГОСТ](#ocular)
     + [Расширения для браузеров](#browser_extensions)
     + [Установка Chromium-Gost](#chromium-gost)
     + [Установка VeraCrypt](#veracrypt)
@@ -79,7 +80,7 @@ __Все файлы на Яндекс диске загружены мной__
 Дополнительно устанавливаем плагин: `sudo dnf install ifcplugin-chromium`  
 Установка корневых сертификатов: `sudo dnf install ca-certificates-ru`  
 
-### Установка Окуляр ГОСТ для штампов ЭП в PDF-файлах  
+### Установка Окуляр ГОСТ для штампов ЭП в PDF-файлах  <a name="ocular"></a>
 
     sudo -E dnf install lsb-core-noarch
     sudo -E dnf install cprocsp-rdr-gui-gtk
