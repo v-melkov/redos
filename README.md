@@ -223,14 +223,16 @@ __Лицензия:__
 
 Сетевой каталог Школа
     
-    su root
+ `su root`
+
     dnf install nfs-utils -y
     mkdir -p /mnt/nfs_share
     chmod 777 /mnt/nfs_share
-    echo "10.189.0.153:/home/user/share /mnt/nfs_shared nfs defaults 0 0" >> /etc/fstab
+    echo "10.189.0.153:/home/user/share /mnt/nfs_share nfs defaults 0 0" >> /etc/fstab
     mount -a
     exit
-    ln -s /mnt/nfs_share /home/`whoami`/Рабочий\ стол/Общая\ папка
+    
+`ln -s /mnt/nfs_share /home/`whoami`/Рабочий\ стол/Общая\ папка`
 
 
 
