@@ -232,7 +232,7 @@ __Лицензия:__
     mount -a
     exit
     
-`ln -s /mnt/nfs_share /home/`whoami`/Рабочий\ стол/Общая\ папка`
+    ln -s /mnt/nfs_share /home/`whoami`/Рабочий\ стол/Общая\ папка
 
 
 
