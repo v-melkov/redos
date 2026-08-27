@@ -166,16 +166,18 @@ __Лицензия:__
     Description=X11vnc server for GDM
     After=display-manager.service
     [Service]
-    ExecStart=/usr/bin/x11vnc -many -shared -display :0 -auth guess -noxdamage -rfbauth /etc/vncpasswd
+    ExecStart=/usr/bin/x11vnc -many -shared -display :0 -auth /run/user/42/gdm/Xauthority -noxdamage -noshm -rfbauth /etc/vncpasswd -forever
     Restart=on-failure
-    RestartSec=3
+    RestartSec=5
     [Install]
     WantedBy=graphical.target' > /lib/systemd/system/x11vnc.service
     systemctl daemon-reload
     systemctl enable --now x11vnc.service
     systemctl status x11vnc.service
 
-Можно запускать клиент Remmina и подключаться  
+Можно запускать клиент Remmina и подключаться
+Не знаю, у всех ли одинакова вот эта:  /run/user/42/gdm/Xauthority строка, узнать можно командой 
+sudo find /run -name "*Xauthority*" 2>/dev/null
 
 ## Установка rdesktop <a name="rdesktop"></a>  
 Под рутом:  
