@@ -220,8 +220,13 @@ __Лицензия:__
         echo "x11vnc остановлен. Перезапуск через 5 секунд..."
         sleep 5
     done
-    EOF
+    EOF  
+
+1  
+    
     sudo chmod +x /usr/local/bin/x11vnc-auto.sh
+
+2  
 
     echo '[Unit]
     Description=x11vnc server for GDM (auto-reconnect)
@@ -236,7 +241,9 @@ __Лицензия:__
     StandardError=journal
 
     [Install]
-    WantedBy=graphical.target' > /etc/systemd/system/x11vnc.service
+    WantedBy=graphical.target' > /etc/systemd/system/x11vnc.service  
+
+3
 
     sudo systemctl daemon-reload
     sudo systemctl restart x11vnc.service
