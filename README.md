@@ -160,9 +160,9 @@ __Лицензия:__
 
     x11vnc -storepasswd "ПРИДУМАЙ_ПАРОЛЬ_И_ВСТАВЬ_СЮДА" /etc/vncpasswd
 
+sudo nano /usr/local/bin/x11vnc-auto.sh
 
-
-echo '#!/bin/bash
+#!/bin/bash
 
 find_xauthority() {
     local display_num=$1
@@ -217,7 +217,7 @@ while true; do
     
     echo "x11vnc остановлен. Перезапуск через 5 секунд..."
     sleep 5
-done' > /usr/local/bin/x11vnc-auto.sh
+done'
 
 
 sudo chmod +x /usr/local/bin/x11vnc-auto.sh
