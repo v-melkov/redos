@@ -162,7 +162,10 @@ __Лицензия:__
 
 Файл запуска:  
 
-    echo '#!/bin/bash
+    
+    cat > /usr/local/bin/x11vnc-auto.sh <<'EOF'
+    
+    #!/bin/bash
     find_xauthority() {
         local display_num=$1
     
@@ -216,7 +219,8 @@ __Лицензия:__
     
         echo "x11vnc остановлен. Перезапуск через 5 секунд..."
         sleep 5
-    done' > /usr/local/bin/x11vnc-auto.sh
+    done'
+    EOF
     sudo chmod +x /usr/local/bin/x11vnc-auto.sh
 
 
