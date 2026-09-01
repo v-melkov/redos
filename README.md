@@ -160,6 +160,7 @@ __Лицензия:__
 
     x11vnc -storepasswd "ПРИДУМАЙ_ПАРОЛЬ_И_ВСТАВЬ_СЮДА" /etc/vncpasswd
 
+Файл запуска:  
 
     echo '#!/bin/bash
     find_xauthority() {
