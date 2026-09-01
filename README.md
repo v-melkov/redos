@@ -164,7 +164,6 @@ __Лицензия:__
 
 echo '#!/bin/bash
 
-# Функция для поиска правильного Xauthority файла
 find_xauthority() {
     local display_num=$1
     
