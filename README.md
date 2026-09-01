@@ -162,62 +162,61 @@ __Лицензия:__
 
 sudo nano /usr/local/bin/x11vnc-auto.sh
 
-#!/bin/bash
-
-find_xauthority() {
-    local display_num=$1
+    #!/bin/bash
+    find_xauthority() {
+        local display_num=$1
     
-    # Пытаемся найти через who
-    local user=$(who | grep "($display_num)" | awk '{print $1}' | head -1)
+        # Пытаемся найти через who
+        local user=$(who | grep "($display_num)" | awk '{print $1}' | head -1)
     
-    if [ -n "$user" ]; then
-        # Проверяем домашнюю директорию пользователя
-        local home=$(getent passwd "$user" | cut -d: -f6)
-        if [ -f "$home/.Xauthority" ]; then
-            echo "$home/.Xauthority"
-            return 0
+        if [ -n "$user" ]; then
+            # Проверяем домашнюю директорию пользователя
+            local home=$(getent passwd "$user" | cut -d: -f6)
+            if [ -f "$home/.Xauthority" ]; then
+                echo "$home/.Xauthority"
+                return 0
+            fi
         fi
-    fi
     
-    # Ищем в /run/user
-    for uid_dir in /run/user/*; do
-        if [ -d "$uid_dir" ]; then
-            # Ищем Xauthority файлы
-            for auth_file in $(find "$uid_dir" -name "*Xauthority*" 2>/dev/null); do
-                # Проверяем, что файл можно прочитать
-                if [ -r "$auth_file" ]; then
-                    echo "$auth_file"
-                    return 0
-                fi
-            done
-        fi
-    done
+        # Ищем в /run/user
+        for uid_dir in /run/user/*; do
+            if [ -d "$uid_dir" ]; then
+                # Ищем Xauthority файлы
+                for auth_file in $(find "$uid_dir" -name "*Xauthority*" 2>/dev/null); do
+                    # Проверяем, что файл можно прочитать
+                    if [ -r "$auth_file" ]; then
+                        echo "$auth_file"
+                        return 0
+                    fi
+                done
+            fi
+        done
     
-    # Если ничего не нашли, возвращаем ошибку
-    return 1
-}
+        # Если ничего не нашли, возвращаем ошибку
+        return 1
+    }
 
-# Основной цикл
-while true; do
-    # Определяем активный дисплей
-    DISPLAY_NUM=$(who | grep -o '(:[0-9]\+)' | head -1 | tr -d '()' || echo ":0")
+    # Основной цикл
+    while true; do
+        # Определяем активный дисплей
+        DISPLAY_NUM=$(who | grep -o '(:[0-9]\+)' | head -1 | tr -d '()' || echo ":0")
     
-    echo "Запуск x11vnc на дисплее $DISPLAY_NUM"
+        echo "Запуск x11vnc на дисплее $DISPLAY_NUM"
     
-    # Ищем Xauthority
-    AUTH_FILE=$(find_xauthority "$DISPLAY_NUM")
+        # Ищем Xauthority
+        AUTH_FILE=$(find_xauthority "$DISPLAY_NUM")
     
-    if [ -n "$AUTH_FILE" ] && [ -f "$AUTH_FILE" ]; then
-        echo "Найден Xauthority: $AUTH_FILE"
-        /usr/bin/x11vnc -shared -display "$DISPLAY_NUM" -auth "$AUTH_FILE" -noxdamage -noshm -rfbauth /etc/vncpasswd -forever
-    else
-        echo "Xauthority не найден, пробуем без него..."
-        /usr/bin/x11vnc -shared -display "$DISPLAY_NUM" -noxdamage -noshm -rfbauth /etc/vncpasswd -forever
-    fi
+        if [ -n "$AUTH_FILE" ] && [ -f "$AUTH_FILE" ]; then
+            echo "Найден Xauthority: $AUTH_FILE"
+            /usr/bin/x11vnc -shared -display "$DISPLAY_NUM" -auth "$AUTH_FILE" -noxdamage -noshm -rfbauth /etc/vncpasswd -forever
+        else
+            echo "Xauthority не найден, пробуем без него..."
+            /usr/bin/x11vnc -shared -display "$DISPLAY_NUM" -noxdamage -noshm -rfbauth /etc/vncpasswd -forever
+        fi
     
-    echo "x11vnc остановлен. Перезапуск через 5 секунд..."
-    sleep 5
-done'
+        echo "x11vnc остановлен. Перезапуск через 5 секунд..."
+        sleep 5
+    done'
 
 
 sudo chmod +x /usr/local/bin/x11vnc-auto.sh
@@ -225,20 +224,20 @@ sudo chmod +x /usr/local/bin/x11vnc-auto.sh
 
 Настраиваем автоматический запуск:  
 
-echo '[Unit]
-Description=x11vnc server for GDM (auto-reconnect)
-After=display-manager.service
+    echo '[Unit]
+    Description=x11vnc server for GDM (auto-reconnect)
+    After=display-manager.service
 
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/x11vnc-auto.sh
-Restart=always
-RestartSec=5
-StandardOutput=journal
-StandardError=journal
+    [Service]
+    Type=simple
+    ExecStart=/usr/local/bin/x11vnc-auto.sh
+    Restart=always
+    RestartSec=5
+    StandardOutput=journal
+    StandardError=journal
 
-[Install]
-WantedBy=graphical.target' > /etc/systemd/system/x11vnc.service
+    [Install]
+    WantedBy=graphical.target' > /etc/systemd/system/x11vnc.service
 
 Можно запускать клиент Remmina и подключаться
 
