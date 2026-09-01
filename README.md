@@ -164,7 +164,6 @@ __Лицензия:__
 
     
     cat > /usr/local/bin/x11vnc-auto.sh <<'EOF'
-    
     #!/bin/bash
     find_xauthority() {
         local display_num=$1
