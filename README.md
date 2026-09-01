@@ -238,6 +238,10 @@ __Лицензия:__
     [Install]
     WantedBy=graphical.target' > /etc/systemd/system/x11vnc.service
 
+    sudo systemctl daemon-reload
+    sudo systemctl restart x11vnc.service
+    sudo systemctl status x11vnc.service
+
 Можно запускать клиент Remmina и подключаться
 
 
