@@ -219,12 +219,9 @@ __Лицензия:__
     
         echo "x11vnc остановлен. Перезапуск через 5 секунд..."
         sleep 5
-    done'
+    done
     EOF
     sudo chmod +x /usr/local/bin/x11vnc-auto.sh
-
-
-Настраиваем автоматический запуск:  
 
     echo '[Unit]
     Description=x11vnc server for GDM (auto-reconnect)
